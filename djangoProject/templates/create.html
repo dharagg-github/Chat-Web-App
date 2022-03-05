@@ -14,7 +14,15 @@
 	<link rel="stylesheet" href="{% static 'website_sign/css/style.css' %}">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url({% static 'website_sign/images/bg.jpg' %});">
+	<body class="img js-fullheight" style="background-image: url({% static 'website_sign/images/bg2.jpg' %});">
+
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    {% endfor %}
+
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -42,15 +50,15 @@
 		      			<input type="text" id="Username" name="Username" class="form-control" placeholder="Username" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="pass1" type="password" class="form-control" placeholder="Password" required>
+	              <input id="pass1" type="password" name="pass1" class="form-control" placeholder="Password" required>
 	              <span toggle="#pass1" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
                     <div class="form-group">
-	              <input id="pass2" type="password" class="form-control" placeholder="Confirm Password" required>
+	              <input id="pass2" type="password" name="pass2" class="form-control" placeholder="Confirm Password" required>
 	              <span toggle="#pass2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
                     <div class="social d-flex text-center">
-                  <button type="submit" class="form-control btn btn-outline-dark submit px-3">Create One</button>
+                  <button type="submit" class="form-control btn btn-success submit px-3">Create One</button>
 	          </div>
 
 	          </form>

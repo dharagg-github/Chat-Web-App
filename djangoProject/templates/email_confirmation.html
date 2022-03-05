@@ -1,0 +1,10 @@
+{% autoescape off %}
+
+    Welcome to Chat Room Login
+
+    Hai {{ name }}
+
+    Please confirm your email by clicking  on the following link provided.
+
+    Confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}
